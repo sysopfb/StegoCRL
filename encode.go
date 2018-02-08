@@ -39,7 +39,7 @@ import (
 	"time"
 )
 
-var bsize = 500
+var bsize = 64
 
 func main() {
 	//Generate a private key and a certificate to create the CRL
@@ -73,7 +73,7 @@ func main() {
 		KeyUsage:    x509.KeyUsageDigitalSignature | x509.KeyUsageCertSign,
 	}
 	//Assuming the file to be encoded into a CRL is named test
-	fdata, _ := ioutil.ReadFile("test2")
+	fdata, _ := ioutil.ReadFile("test")
 	sz := len(fdata)
 
 	//We can store the files hash in the last revoked cert in the list as an extension
